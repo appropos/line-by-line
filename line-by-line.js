@@ -114,9 +114,7 @@ LineByLineReader.prototype._nextLine = function () {
 				this.emit('line', this._lineFragment);
 				this._lineFragment = '';
 			}
-			if (!this._paused) {
-				this.end();
-			}
+			this.end();
 		} else {
 			this._readStream.resume();
 		}
